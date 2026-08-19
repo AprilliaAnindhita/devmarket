@@ -26,7 +26,7 @@ class Auth {
     }
     public static function requireLogin(): void {
         if (!self::check()) {
-            flash('error', 'Please login to continue.');
+            flash('error', 'Silakan masuk untuk melanjutkan.');
             redirect('/login');
         }
     }

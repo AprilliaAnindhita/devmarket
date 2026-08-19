@@ -1,17 +1,14 @@
 <!-- Hero -->
 <section class="fade-up overflow-hidden rounded-3xl bg-ink-900 px-6 py-12 text-white sm:px-12 sm:py-16">
     <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-2 rounded-full bg-brand-600/20 px-3 py-1 text-xs font-semibold text-brand-400 ring-1 ring-inset ring-brand-400/30">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span> Akses Digital Instan
-        </span>
         <h1 class="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Akselerasi Proyek Digital Anda dengan <span class="text-brand-400">Aset Premium</span>
+            Accelerate Your Digital Projects with <span class="text-brand-400">Premium Assets</span>
         </h1>
         <p class="mt-4 text-base text-slate-300 sm:text-lg">
-            Koleksi Kit UI, template, <em>source code</em>, dan e-book berkualitas tinggi yang dikurasi khusus untuk <em>developer</em>. Beli sekali, unduh dan gunakan selamanya.
+            A curated collection of high-quality UI kits, templates, <em>source code</em>, and e-books for developers. Buy once, download, and use forever.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
-            <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Jelajahi Aset Digital</a>
+            <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Explore digital assets</a>
             <?php if (!Auth::check()): ?>
                 <a href="/register" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 transition hover:bg-white/20">Buat akun</a>
             <?php elseif (Auth::user()['role'] === 'buyer'): ?>
@@ -25,7 +22,7 @@
 <section id="catalog" class="mt-10 scroll-mt-24">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-            <h2 class="font-display text-2xl font-bold text-ink-900">Jelajahi Aset Digital</h2>
+            <h2 class="font-display text-2xl font-bold text-ink-900">Explore digital assets</h2>
             <p class="mt-1 text-sm text-slate-500"><?= count($products) ?> produk<?= count($products) === 1 ? '' : 's' ?> tersedia</p>
         </div>
         <form method="GET" action="/" class="flex flex-wrap items-center gap-2" data-testid="filter-form">
@@ -71,7 +68,7 @@
                             <form method="POST" action="/cart/add">
                                 <input type="hidden" name="product_id" value="<?= $p['id'] ?>">
                                 <input type="hidden" name="redirect" value="/">
-                                <button type="submit" class="rounded-xl bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600" data-testid="add-to-cart-<?= $p['id'] ?>">Tambah ke keranjang</button>
+                                <button type="submit" class="rounded-xl bg-ink-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600" data-testid="add-to-cart-<?= $p['id'] ?>">Add to cart</button>
                             </form>
                         </div>
                     </div>

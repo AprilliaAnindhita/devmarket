@@ -2,6 +2,7 @@
 
 class CartController {
     public function add(): void {
+        Auth::requireLogin();
         $productId = (int)($_POST['product_id'] ?? 0);
         $product = Product::find($productId);
         if (!$product) {

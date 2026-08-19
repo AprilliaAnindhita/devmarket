@@ -34,7 +34,7 @@
         <form method="POST" action="/cart/add" class="mt-8 flex flex-wrap gap-3">
             <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
             <input type="hidden" name="redirect" value="/product/<?= e($product['slug']) ?>">
-            <button type="submit" class="flex-1 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="add-to-cart-btn">Tambah ke keranjang</button>
+            <button type="submit" class="flex-1 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="add-to-cart-btn">Add to cart</button>
             <a href="/cart" class="rounded-xl bg-slate-100 px-6 py-3.5 text-center text-sm font-semibold text-slate-700 ring-1 ring-inset ring-slate-200 transition hover:bg-slate-200">View cart</a>
         </form>
     </div>
