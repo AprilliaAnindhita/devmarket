@@ -1,0 +1,8 @@
+.git
+.env
+storage/.installed
+storage/downloads/*
+public/uploads/*
+.vscode
+.idea
+*.log
