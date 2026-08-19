@@ -3,28 +3,28 @@
 class Installer {
     private static array $seedProducts = [
         // category_slug, title, price, thumbnail(url), ext, description
-        ['ui-kits', 'Kit UI Nova', 750000, 'https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Sistem desain komprehensif dengan 240+ komponen yang dirancang dengan cermat, tema gelap & terang, dan file sumber Figma. Sempurna untuk mengirimkan produk yang halus dengan cepat.'],
-        ['ui-kits', 'Sistem Desain Aurora', 1200000, 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Sistem desain tingkat perusahaan yang mencakup tipografi, token warna, dan komponen yang dapat diakses. Termasuk implementasi React dan Vue.'],
-        ['ui-kits', 'Perpustakaan Komponen Pulse', 600000, 'https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Komponen UI yang ringan dan beranimasi dibangun dengan Tailwind CSS. Snippet siap pakai untuk dasbor SaaS modern dan halaman landing.'],
+        ['ui-kits', 'Nova UI Kit', 750000, 'https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'A comprehensive design system with 240+ crafted components, dark & light themes, and Figma source files. Perfect for shipping polished products fast.'],
+        ['ui-kits', 'Aurora Design System', 1200000, 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'An enterprise-grade design system covering typography, color tokens, and accessible components. Includes React and Vue implementations.'],
+        ['ui-kits', 'Pulse Component Library', 600000, 'https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Lightweight, animated UI components built with Tailwind CSS. Drop-in ready snippets for modern SaaS dashboards and landing pages.'],
 
-        ['ebooks', 'Menguasai PHP 8', 350000, 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'Pendalaman 320 halaman tentang PHP modern: atribut, enum, serat, JIT, dan pola arsitektur bersih dengan contoh dunia nyata.'],
-        ['ebooks', 'Pendalaman JavaScript', 450000, 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'Pahami mesinnya: closure, event loop, prototipe, pola async, dan kinerja. Ditulis untuk insinyur yang menginginkan penguasaan.'],
-        ['ebooks', 'Panduan Clean Code', 300000, 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'Prinsip praktis untuk menulis perangkat lunak yang dapat dibaca dan dipelihara. Resep refaktor, penamaan, pengujian, dan daftar periksa tinjauan kode.'],
+        ['ebooks', 'Mastering PHP 8', 350000, 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'A 320-page deep dive into modern PHP: attributes, enums, fibers, JIT, and clean architecture patterns with real-world examples.'],
+        ['ebooks', 'JavaScript Deep Dive', 450000, 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'Understand the engine: closures, the event loop, prototypes, async patterns, and performance. Written for engineers who want mastery.'],
+        ['ebooks', 'Clean Code Handbook', 300000, 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'pdf', 'Practical principles for writing readable, maintainable software. Refactoring recipes, naming, testing, and code review checklists.'],
 
-        ['templates', 'Dashboard Admin Pro', 900000, 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Template admin siap produksi dengan grafik, tabel, alur auth, dan 30+ halaman. Dibangun di Tailwind dengan dukungan mode gelap.'],
-        ['templates', 'Kit Landing SaaS', 500000, 'https://images.unsplash.com/photo-1686061592689-312bbfb5c055?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Bagian halaman landing dengan konversi tinggi: hero, penetapan harga, testimonial, dan FAQ. Responsif sepenuhnya dan ramah copy-paste.'],
-        ['templates', 'Pemula Portfolio', 400000, 'https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Template portfolio pengembang yang elegan dengan pameran proyek, blog, dan formulir kontak. Terapkan dalam hitungan menit.'],
+        ['templates', 'Admin Dashboard Pro', 900000, 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'A production-ready admin template with charts, tables, auth flows, and 30+ pages. Built on Tailwind with dark mode support.'],
+        ['templates', 'SaaS Landing Kit', 500000, 'https://images.unsplash.com/photo-1686061592689-312bbfb5c055?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'High-converting landing page sections: hero, pricing, testimonials, and FAQ. Fully responsive and copy-paste friendly.'],
+        ['templates', 'Portfolio Starter', 400000, 'https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'An elegant developer portfolio template with project showcase, blog, and contact form. Deploy in minutes.'],
 
-        ['icons-fonts', 'Paket 5000 Ikon Garis', 250000, 'https://images.unsplash.com/photo-1506729623306-b5a934d88b53?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Koleksi besar 5.000 ikon garis yang sempurna untuk piksel dalam format SVG, PNG, dan font ikon. Grid konsisten 24px.'],
-        ['icons-fonts', 'Set Ikon Geometrik', 200000, 'https://images.unsplash.com/photo-1605106325682-3482f7c1c9c4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Set ikon geometrik yang berani dengan 600 merek, dirancang untuk antarmuka yang membutuhkan kepribadian. Termasuk varian duotone.'],
-        ['icons-fonts', 'Bundel Font Display', 700000, 'https://images.unsplash.com/photo-1566978862346-73282aa378a4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Enam typeface display premium dengan jangkauan merek lengkap, ligatur, dan kit font web. Lisensi komersial disertakan.'],
+        ['icons-fonts', '5000 Line Icons Pack', 250000, 'https://images.unsplash.com/photo-1506729623306-b5a934d88b53?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'A massive collection of 5,000 pixel-perfect line icons in SVG, PNG, and icon font formats. Consistent 24px grid.'],
+        ['icons-fonts', 'Geometric Icon Set', 200000, 'https://images.unsplash.com/photo-1605106325682-3482f7c1c9c4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'A bold geometric icon set with 600 glyphs, designed for interfaces that need personality. Includes duotone variants.'],
+        ['icons-fonts', 'Display Font Bundle', 700000, 'https://images.unsplash.com/photo-1566978862346-73282aa378a4?crop=entropy&cs=srgb&fm=jpg&q=85&w=800', 'zip', 'Six premium display typefaces with full glyph coverage, ligatures, and web font kits. Commercial license included.'],
     ];
 
     private static array $seedCategories = [
-        ['Kit UI', 'ui-kits'],
-        ['E-Book', 'ebooks'],
-        ['Template', 'templates'],
-        ['Ikon & Font', 'icons-fonts'],
+        ['UI Kits', 'ui-kits'],
+        ['E-Books', 'ebooks'],
+        ['Templates', 'templates'],
+        ['Icons & Fonts', 'icons-fonts'],
     ];
 
     public static function ensure(): void {

@@ -9,9 +9,7 @@
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
             <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Explore digital assets</a>
-            <?php if (!Auth::check()): ?>
-                <a href="/register" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 transition hover:bg-white/20">Buat akun</a>
-            <?php elseif (Auth::user()['role'] === 'buyer'): ?>
+            <?php if (Auth::check() && Auth::user()['role'] === 'buyer'): ?>
                 <a href="/dashboard" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 transition hover:bg-white/20">Dashboard saya</a>
             <?php endif; ?>
         </div>
