@@ -11,7 +11,7 @@
             Koleksi Kit UI, template, <em>source code</em>, dan e-book berkualitas tinggi yang dikurasi khusus untuk <em>developer</em>. Beli sekali, unduh dan gunakan selamanya.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
-            <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Jelajahi katalog</a>
+            <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Jelajahi Aset Digital</a>
             <?php if (!Auth::check()): ?>
                 <a href="/register" class="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 transition hover:bg-white/20">Buat akun</a>
             <?php elseif (Auth::user()['role'] === 'buyer'): ?>
