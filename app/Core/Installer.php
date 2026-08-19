@@ -29,10 +29,47 @@ class Installer {
 
     public static function ensure(): void {
         $flag = __DIR__ . '/../../storage/.installed';
-        if (file_exists($flag)) return;
+        if (file_exists($flag)) {
+            self::syncSeedContent();
+            return;
+        }
         self::migrate();
         self::seed();
+        self::syncSeedContent();
         @file_put_contents($flag, date('c'));
+    }
+
+    private static function syncSeedContent(): void {
+        $pdo = db();
+        $products = [
+            'Kit UI Nova' => ['Nova UI Kit', 'A comprehensive design system with 240+ crafted components, dark & light themes, and Figma source files. Perfect for shipping polished products fast.'],
+            'Sistem Desain Aurora' => ['Aurora Design System', 'An enterprise-grade design system covering typography, color tokens, and accessible components. Includes React and Vue implementations.'],
+            'Perpustakaan Komponen Pulse' => ['Pulse Component Library', 'Lightweight, animated UI components built with Tailwind CSS. Drop-in ready snippets for modern SaaS dashboards and landing pages.'],
+            'Menguasai PHP 8' => ['Mastering PHP 8', 'A 320-page deep dive into modern PHP: attributes, enums, fibers, JIT, and clean architecture patterns with real-world examples.'],
+            'Pendalaman JavaScript' => ['JavaScript Deep Dive', 'Understand the engine: closures, the event loop, prototypes, async patterns, and performance. Written for engineers who want mastery.'],
+            'Panduan Clean Code' => ['Clean Code Handbook', 'Practical principles for writing readable, maintainable software. Refactoring recipes, naming, testing, and code review checklists.'],
+            'Dashboard Admin Pro' => ['Admin Dashboard Pro', 'A production-ready admin template with charts, tables, auth flows, and 30+ pages. Built on Tailwind with dark mode support.'],
+            'Kit Landing SaaS' => ['SaaS Landing Kit', 'High-converting landing page sections: hero, pricing, testimonials, and FAQ. Fully responsive and copy-paste friendly.'],
+            'Pemula Portfolio' => ['Portfolio Starter', 'An elegant developer portfolio template with project showcase, blog, and contact form. Deploy in minutes.'],
+            'Paket 5000 Ikon Garis' => ['5000 Line Icons Pack', 'A massive collection of 5,000 pixel-perfect line icons in SVG, PNG, and icon font formats. Consistent 24px grid.'],
+            'Set Ikon Geometrik' => ['Geometric Icon Set', 'A bold geometric icon set with 600 glyphs, designed for interfaces that need personality. Includes duotone variants.'],
+            'Bundel Font Display' => ['Display Font Bundle', 'Six premium display typefaces with full glyph coverage, ligatures, and web font kits. Commercial license included.'],
+        ];
+        $update = $pdo->prepare('UPDATE products SET title = ?, slug = ?, description = ? WHERE title = ?');
+        foreach ($products as $legacyTitle => [$title, $description]) {
+            $update->execute([$title, self::slugify($title), $description, $legacyTitle]);
+        }
+
+        $categories = [
+            'Kit UI' => 'UI Kits',
+            'E-Book' => 'E-Books',
+            'Template' => 'Templates',
+            'Ikon & Font' => 'Icons & Fonts',
+        ];
+        $categoryUpdate = $pdo->prepare('UPDATE categories SET name = ? WHERE name = ?');
+        foreach ($categories as $legacyName => $name) {
+            $categoryUpdate->execute([$name, $legacyName]);
+        }
     }
 
     public static function migrate(): void {
