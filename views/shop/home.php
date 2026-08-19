@@ -2,13 +2,13 @@
 <section class="fade-up overflow-hidden rounded-3xl bg-ink-900 px-6 py-12 text-white sm:px-12 sm:py-16">
     <div class="max-w-2xl">
         <span class="inline-flex items-center gap-2 rounded-full bg-brand-600/20 px-3 py-1 text-xs font-semibold text-brand-400 ring-1 ring-inset ring-brand-400/30">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span> Pengiriman digital instan
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span> Akses Digital Instan
         </span>
         <h1 class="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Jual lebih cepat dengan <span class="text-brand-400">aset premium</span> pengembang.
+            Akselerasi Proyek Digital Anda dengan <span class="text-brand-400">Aset Premium</span>
         </h1>
         <p class="mt-4 text-base text-slate-300 sm:text-lg">
-            Kit UI, template, e-book, ikon &amp; font — dipilih dengan cermat untuk pembangun. Beli sekali, unduh sekarang.
+            Koleksi Kit UI, template, <em>source code</em>, dan e-book berkualitas tinggi yang dikurasi khusus untuk <em>developer</em>. Beli sekali, unduh dan gunakan selamanya.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
             <a href="#catalog" class="rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-brand-600/30 transition hover:bg-brand-500" data-testid="hero-browse-btn">Jelajahi katalog</a>
@@ -25,7 +25,7 @@
 <section id="catalog" class="mt-10 scroll-mt-24">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-            <h2 class="font-display text-2xl font-bold text-ink-900">Jelajahi aset</h2>
+            <h2 class="font-display text-2xl font-bold text-ink-900">Jelajahi Aset Digital</h2>
             <p class="mt-1 text-sm text-slate-500"><?= count($products) ?> produk<?= count($products) === 1 ? '' : 's' ?> tersedia</p>
         </div>
         <form method="GET" action="/" class="flex flex-wrap items-center gap-2" data-testid="filter-form">
